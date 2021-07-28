@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <title>Awesome Weather App</title>
+ {% load static %}
+ <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link rel="icon" type="image/png" size="16x16" href="{% static 'img/logo.png' %}">
+ <link rel="stylesheet" href="{% static 'css/style.css' %}">
+ <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+</head>
+
+<body>
+  <div class="parent1" style="width: 50%;">
+   <div class="div1">   
+    <div class="form__group field">
+     <input type="input" class="form__field" placeholder="Name" name="name" id="city" required />
+     <label for="name" class="form__label">Type a city name</label>
+    </div>
+   </div> 
+   <div class="div2" style="width: 0%;">             
+    <div class="container">
+     <button class="button" id="target" style="color: white;"><i class="fas fa-map-marker-alt"></i> Change Location</button>
+    </div>  
+   </div>
+  </div>
+  <div class="parent2" style="width: 88%; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">  
+   <div class="div5" style="background-color: #f2f3f7; height: 240px;">
+    <h3 style="text-align: center; color: #067CF8;">Location</h3>               
+    <div class="button button-dial" style="border-radius: 30% 30%;">                
+     <div class="button-dial-top" id="div_to_hide" style="border-radius: 30% 30%;"></div>
+      <div class="button-dial-label" style="text-align: center; position: absolute; justify-content: center; align-items: center;">
+       <p>
+        <i class="fas fa-map-marked-alt fa-10px"></i>
+        <br>
+        <small id="country" style="margin-top: -20px;"></small>
+       </p>
+      </div>
+    </div>
+   </div>          
+   <div class="div6" style="background-color: #f2f3f7; height: 240px;">             
+    <h3 style="text-align: center; color: #067CF8">Temperature</h3>   
+    <div class="button button-dial">                 
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>                
+     <div class="button-dial-top"></div>
+     <div class="button-dial-label" style="text-align: center; position: absolute; justify-content: center; align-items: center;">
+      <p>
+       <i class="fas fa-thermometer-half fa-10px"></i>
+       <br>
+       <small id="temperature" style="margin-top: -20px;"></small>
+      </p>
+     </div>
+    </div>
+   </div>              
+   <div class="div7" style="background-color: #f2f3f7; height: 240px;">            
+    <h3 style="text-align: center; color: #067CF8">Feels Like</h3>
+    <div class="button button-dial">              
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>                
+     <div class="button-dial-top"></div>
+     <div class="button-dial-label" style="text-align: center; position: absolute; justify-content: center; align-items: center;">
+      <p>
+       <i class="fas fa-thermometer-half fa-10px"></i>
+       <br>
+      <small id="temperature_fl" style="margin-top: -20px;"></small>
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="div8" style="background-color: #f2f3f7; height: 240px;">      
+    <h3 style="text-align: center; color: #067CF8">Temperature Max</h3>
+    <div class="button button-dial">               
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>             
+     <div class="button-dial-top"></div>
+     <div class="button-dial-label" style="text-align: center; position: absolute; justify-content: center; align-items: center;">
+      <p>
+       <i class="fas fa-thermometer-full fa-10px"></i>
+       <br>
+       <small id="temperature_max" style="margin-top: -20px;"></small>
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="div9" style="background-color: #f2f3f7; height: 240px;">           
+    <h3 style="text-align: center; color: #067CF8">Temperature Min</h3>
+    <div class="button button-dial">              
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span> 
+     <div class="button-dial-top"></div>
+     <div class="button-dial-label" style="text-align: center; position: absolute; justify-content: center; align-items: center;">
+      <p>
+       <i class="fas fa-thermometer-quarter fa-10px"></i>
+       <br>
+       <small id="temperature_min" style="margin-top: -20px;"></small>
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="div13" style="background-color: #f2f3f7; height: 240px;"> 
+    <h3 style="text-align: center; color: #067CF8">Humidity</h3>
+    <div class="button button-dial">                
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>              
+     <div class="button-dial-top"></div>
+     <div class="button-dial-label" style="text-align: center; position: absolute; justify-content: center; align-items: center;">
+      <p>
+       <i class="fas fa-humidity fa-10px"></i>
+       <br>
+       <small id="humidity" style="margin-top: -20px;"></small>
+      </p>
+     </div>
+    </div>       
+   </div>     
+   <div class="div12" style="background-color: #f2f3f7; height: 240px;"> 
+    <h3 style="text-align: center; color: #067CF8">Air Pressure</h3>
+    <div class="button button-dial">                  
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>    
+     <div class="button-dial-top"></div>
+     <div class="button-dial-label" style="text-align: center; position: absolute; justify-content: center; align-items: center;">
+      <p>
+       <i class="fas fa-water-lower fa-10px"></i> 
+       <br>
+       <small id="pressure" style="margin-top: -20px;"></small>
+      </p>
+     </div>
+    </div>     
+   </div>                 
+   <div class="div11" style="background-color: #f2f3f7; height: 240px;"> 
+    <h3 style="text-align: center; color: #067CF8">Wind Speed</h3>
+    <div class="button button-dial">                 
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>              
+     <div class="button-dial-top"></div>
+     <div class="button-dial-label" style="text-align: center; position: absolute; justify-content: center; align-items: center;">
+      <p>
+       <i class="fas fa-wind fa-10px"></i>
+       <br>
+       <small id="wind_speed" style="margin-top: -20px;"></small>
+      </p>
+     </div>
+    </div>
+   </div>                
+   <div class="div10" style="background-color: #f2f3f7; height: 240px;"> 
+    <h3 style="text-align: center; color: #067CF8">Sunrise</h3>
+    <div class="button button-dial">     
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>            
+     <div class="button-dial-top"></div>
+     <div class="button-dial-label" style="text-align: center; position: absolute; justify-content: center; align-items: center;">
+      <p>
+       <i class="fas fa-sunrise fa-10px"></i>
+       <br>
+       <small id="sunrise" style="margin-top: -20px;"></small>
+      </p>
+     </div>
+    </div>
+   </div>                     
+   <div class="div14" style="background-color: #f2f3f7; height: 240px;"> 
+    <h3 style="text-align: center; color: #067CF8">Sunset</h3>
+    <div class="button button-dial">
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>
+     <span class="button-dial-spoke"></span>                          
+     <div class="button-dial-top"></div>
+     <div class="button-dial-label" style="text-align: center; position: absolute; justify-content: center; align-items: center;">
+      <p>
+       <i class="fas fa-sunset fa-10px"></i>
+       <br>
+       <small id="sunset" style="margin-top: -20px;"></small>
+      </p>
+     </div>
+    </div>       
+   </div>         
+  </div>          
+</body>
+
+<script>
+$(document).ready(function(){
+  $('#target').click(function(){
+    var city = $("#city").val();
+    if (city != ''){
+        $.ajax({
+            url: "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric" + "&APPID={API key}",
+            type: "GET",
+            dataType: "json",
+            success: function(data){
+                if ( data.name.length > 7 ) {
+                  $("#div_to_hide").hide();
+                  $("#country").css({"font-size": "18px"});
+                  $("#country").text(data.name + ", " + data.sys.country);
+                }
+                else{
+                  $("#div_to_hide").show();
+                  $("#country").text(data.name + ", " + data.sys.country);
+                }
+                $("#temperature").text(data.main.temp + " °C");
+                $("#temperature_fl").text(data.main.feels_like + " °C");
+                $("#temperature_max").text(data.main.temp_max + " °C");
+                $("#temperature_min").text(data.main.temp_min + " °C");
+                $("#humidity").text(data.main.humidity + " %");
+                $("#pressure").text(data.main.pressure + " hPa");
+                $("#wind_speed").text(data.wind.speed + " m/s");
+                var sec = data.sys.sunrise;
+                var date = new Date(sec * 1000);
+                var timestr = date.toLocaleTimeString([], {timeStyle: 'short'}); 
+                $("#sunrise").text(timestr + " AM");
+                var sec = data.sys.sunset;
+                var date = new Date(sec * 1000);
+                var timestr = date.toLocaleTimeString([], {timeStyle: 'short'}); 
+                $("#sunset").text(timestr + " PM");
+            }
+        });
+    }
+  });
+})
+</script>
+</html>      

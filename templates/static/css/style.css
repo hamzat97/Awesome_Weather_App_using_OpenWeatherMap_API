@@ -1,0 +1,257 @@
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #afafaf;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.form__field::-moz-placeholder {
+  color: transparent;
+}
+.form__field:-ms-input-placeholder {
+  color: transparent;
+}
+.form__field::placeholder {
+  color: transparent;
+}
+.form__field:-moz-placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+.form__field:-ms-input-placeholder ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #afafaf;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  -o-border-image: linear-gradient(to right, #15818f, #067CF8);
+     border-image: linear-gradient(to right, #15818f, #067CF8);
+  border-image-slice: 1;
+}
+.form__field:focus .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #15818f;
+  font-weight: 700;
+}
+
+.form__field:required, .form__field:invalid {
+  box-shadow: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #222222;
+}
+
+.parent1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 4px;
+  grid-row-gap: 4px;
+  margin-top: 7px;
+}
+
+.div1 {
+  grid-area: 1/1/2/2;
+}
+
+.div2 {
+  grid-area: 1/2/2/3;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 7px;
+  text-align: center;
+}
+.container .button {
+  transition: all 0.3s ease-in-out;
+}
+.container .button:nth-child(1) {
+  width: 260px;
+  height: 55px;
+  border-radius: 30px;
+  background-image: linear-gradient(135deg, #87b9ee 0%, #3187e2 100%);
+  box-shadow: 0 0px 0px 0px #067CF8;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: white;
+}
+.container .button:active {
+  opacity: 0.5;
+}
+
+.parent2 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 4px;
+  grid-row-gap: 4px;
+  margin-top: -32px;
+}
+
+.div5 {
+  grid-area: 1/1/2/2;
+  border-radius: 20% 10%;
+}
+
+.div6 {
+  grid-area: 1/2/2/3;
+  border-radius: 20% 10%;
+}
+
+.div7 {
+  grid-area: 1/3/2/4;
+  border-radius: 20% 10%;
+}
+
+.div8 {
+  grid-area: 1/4/2/5;
+  border-radius: 20% 10%;
+}
+
+.div9 {
+  grid-area: 1/5/2/6;
+  border-radius: 20% 10%;
+}
+
+.div10 {
+  grid-area: 2/4/3/5;
+  border-radius: 20% 10%;
+}
+
+.div11 {
+  grid-area: 2/3/3/4;
+  border-radius: 20% 10%;
+}
+
+.div12 {
+  grid-area: 2/2/3/3;
+  border-radius: 20% 10%;
+}
+
+.div13 {
+  grid-area: 2/1/3/2;
+  border-radius: 20% 10%;
+}
+
+.div14 {
+  grid-area: 2/5/3/6;
+  border-radius: 20% 10%;
+}
+
+.button {
+  color: #222;
+  position: relative;
+  border-radius: 15px;
+  background: #f2f3f7;
+  font-weight: 700;
+  transition: all 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+}
+
+.button-dial {
+  border-radius: 50%;
+  display: flex;
+  margin: 5px auto;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  height: 70%;
+  margin-top: -5px;
+  box-shadow: -2px -2px 4px 0px #ffffff, 15px 15px 15px 0px rgba(89, 178, 250, 0.25);
+}
+
+.button-dial-top {
+  background: #f2f3f7;
+  border-radius: 50%;
+  width: 75%;
+  height: 75%;
+  margin: 0 auto;
+  position: absolute;
+  text-align: center;
+  z-index: 5;
+  box-shadow: -2px -2px 4px 0px #ffffff, 50px 50px 50px 0px rgba(0, 0, 0, 0.25);
+}
+
+.button-dial-label {
+  color: #067CF8;
+  font-size: 28px;
+  fill: #067CF8;
+  position: relative;
+  z-index: 10;
+}
+
+.button-dial-spoke {
+  background-color: rgba(96, 171, 254, 0.6);
+  display: block;
+  height: 1px;
+  width: 83%;
+  position: absolute;
+  margin: 0 auto;
+  z-index: 5;
+  top: 50%;
+}
+.button-dial-spoke:nth-child(2) {
+  transform: rotate(30deg);
+}
+.button-dial-spoke:nth-child(3) {
+  transform: rotate(60deg);
+}
+.button-dial-spoke:nth-child(4) {
+  transform: rotate(90deg);
+}
+.button-dial-spoke:nth-child(5) {
+  transform: rotate(120deg);
+}
+.button-dial-spoke:nth-child(6) {
+  transform: rotate(150deg);
+}/*# sourceMappingURL=style.css.map */
