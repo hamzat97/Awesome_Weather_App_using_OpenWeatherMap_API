@@ -1,4 +1,4 @@
-## Building_an_Awesome_Weather_App_using_OpenWeatherMap_API
+# Awesome_Weather_App_using_OpenWeatherMap_API
 This application makes a call by city name to the OpenWeatherMap API using Ajax to get current weather information in JSON format. However, the concept is equally relevant to using any API, but this app makes things a little bit easy because the user has just to type the name of a location and the results will be displayed in the page.    
 
 ### What is OpenWeatherMap API ?
